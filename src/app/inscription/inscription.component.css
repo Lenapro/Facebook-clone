@@ -1,13 +1,49 @@
 .example-form {
     min-width: 150px;
-    max-width: 300px;
+    max-width: 450px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    margin-top: 1%;
     display: block;
   }
   
   .example-full-width {
     width: 100%;
   }
+  .topbtn {
+    border: none;
+    background-color: transparent;
+  }
+  .col-sm-6{
+    margin: auto;
+    margin-top: 9%;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+    margin-left: 10%;
+    height: 400px;
+  
+
+  }
+  p {
+    line-height: 1.5;
+  }
+  
+  button{
+    margin: auto;
+    width: 100% ;
+    height: 47px;
+    background-color: #3a6ce2;;
+    border-radius: 5px;
+    color: white;
+    font-size: 100%;
+    border: none;
+    margin-top: 30px;
+}
+.mat-radio-button {
+  margin-left: 16px;
+  margin-top: 10px;
+}

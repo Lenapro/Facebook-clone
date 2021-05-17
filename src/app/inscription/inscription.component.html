@@ -1,12 +1,71 @@
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-        Please enter a valid email address
-      </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-  </form>
+<div class="container-fluid">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-5" style="margin-top: 15%;">
+        <strong class="text-primary" style="font-size: 350%;margin-left: 20%;"> facebook </strong>
+        <p style="font-size: 185%; margin-left: 20%;" class="K"> Avec Facebook, partagez et restez en <br>
+          contact avec votre entourage </p>
+      </div>
+      <div class="col-sm-6 shadow">
+        <form class="example-form">
+          <div class="form-group row">
+            <div class="col-md-6">
+              <mat-form-field class="form-group" style="width: 100%;">
+                <mat-label><b>Votre nom</b></mat-label>
+                <input matInput class="display-4 " style="font-size: 20px; font-weight:500;" type="text" name="nom">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="form-group" style="width: 100%;">
+                <mat-label><b>Votre prenom</b></mat-label>
+                <input matInput class="display-4 " style="font-size: 20px; font-weight:500;" type="text" name="prenom">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <mat-label><b>Email</b></mat-label>
+              <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="form-group" style="width: 100%;">
+              <mat-label><b>Mon mot de passe</b></mat-label>
+              <input matInput class="display-4 " style="font-size: 20px; font-weight:500;"
+                [type]="hide ? 'password' : 'text'" name="password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                title="8 charactères au moins avec une lettre majuscule, une minuscule et des chiffres" maxlength="15"
+                autocomplete="off" [(ngModel)]="passtest">
+              <button class="topbtn" mat-icon-button matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon style="font-size: 20px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-error *ngIf="password==false">
+              <p class="text-center text-danger">Mot de passe incorrect</p>
+            </mat-error>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="form-group" style="width: 100%;">
+              <mat-label><b>Date de naissance</b></mat-label>
+              <input matInput class="display-4 " style="font-size: 20px; font-weight:500;" type="date"
+                name="datenaissance">
+            </mat-form-field>
+          </div>
+          <label for="usr"><b>Civilité:</b></label><br>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Homme</mat-radio-button>
+            <mat-radio-button value="2">Femme</mat-radio-button>
+          </mat-radio-group><br>
+          <button mat-raised-button color="primary">Inscription</button>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
