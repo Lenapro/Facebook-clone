@@ -1,0 +1,30 @@
+img{
+    margin-left: 20px;
+    width: 40px;
+}
+input{
+    margin-left: 15px;
+    border-radius: 80px;
+    background-color: rgb(65, 66, 66);
+    border: none;
+    width: 220px;
+}
+ul{
+    margin-left: 50px;
+}
+button{
+    margin-left: 10px;
+    border-radius: 10px;
+
+}
+a:hover{
+    background-color:rgb(65, 66, 66);
+}
+a{
+    border-radius: 20px;
+    width: 105px;
+    text-align: center;
+}
+a:active{
+    color: lightcoral;
+}

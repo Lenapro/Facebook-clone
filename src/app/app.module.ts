@@ -13,12 +13,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

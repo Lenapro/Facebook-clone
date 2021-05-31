@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
+import { User } from '../models/User';
+import { UserService } from '../Service/user.service';
 
 
 @Component({
@@ -10,8 +12,17 @@ import {FormControl, NgForm, Validators} from '@angular/forms';
  
 })
 export class InscriptionComponent implements OnInit {
+  
+  hide = true;
+  email: boolean;
+  password: boolean;
+  passtest: string;
+  // tslint:disable-next-line: variable-name
+  password_medecin: string;
 
-  constructor() { }
+  user: User = new User();
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -24,10 +35,17 @@ export class InscriptionComponent implements OnInit {
   onSubmit(form: NgForm) {
   }
 
-  hide = true;
-  email: boolean;
-  password: boolean;
-  passtest: string;
-  // tslint:disable-next-line: variable-name
-  password_medecin: string;
+  inscription(){
+    console.log(this.user)
+    this.user.genre = "Feminin"
+    this.userService.inscription(this.user).subscribe((data: User) =>{
+      if(data !== null){
+        this.user = data;
+        console.log(this.user);
+      }else{
+        console.log(data)
+      }
+    })
+  }
+
 }
