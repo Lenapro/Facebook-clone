@@ -1,5 +1,5 @@
 img{
-    margin-left: 20px;
+    margin-left: 40px;
     width: 40px;
 }
 input{
@@ -12,19 +12,17 @@ input{
 ul{
     margin-left: 50px;
 }
-button{
-    margin-left: 10px;
-    border-radius: 10px;
 
-}
-a:hover{
+a.nav-link:hover{
     background-color:rgb(65, 66, 66);
 }
-a{
-    border-radius: 20px;
-    width: 105px;
-    text-align: center;
+a.nav-link{
+    border-radius: 80px;
+    width: 60px;
 }
-a:active{
-    color: lightcoral;
+.nav-item{
+    margin-left: 100px;
+}
+.aside{
+    text-align: left;
 }

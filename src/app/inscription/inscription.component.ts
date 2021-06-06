@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { UserService } from '../Service/user.service';
 
@@ -22,7 +23,7 @@ export class InscriptionComponent implements OnInit {
 
   user: User = new User();
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -41,6 +42,7 @@ export class InscriptionComponent implements OnInit {
     this.userService.inscription(this.user).subscribe((data: User) =>{
       if(data !== null){
         this.user = data;
+        this.router.navigate(['accueil']);
         console.log(this.user);
       }else{
         console.log(data)
