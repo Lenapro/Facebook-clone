@@ -15,10 +15,16 @@ export class AccueilComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  ngOnInit() {
+  ngOnInit() : void {
+    
+  }
+
+  get_user(){
     console.log(this.user)
-    this.userService.get_user(this.user).subscribe((id: User )=>{
-      this.user = id;
+    this.user.genre="Feminin"
+    this.userService.get_user(this.user.id).subscribe((data: User )=>{
+      this.user = data;
+      console.log(this.user)
     })
   }
 
