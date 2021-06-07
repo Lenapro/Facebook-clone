@@ -13,4 +13,9 @@ export class UserService {
     const body = JSON.stringify(data);
     return this.http.post("http://localhost:8000/facebook/inscription", body, { 'headers': headers });
   }
+  get_user(id) {
+    return this.http.get("http://localhost:8000/facebook/accueil")
+  }
+
+  
 }
