@@ -43,7 +43,8 @@ export class InscriptionComponent implements OnInit {
     this.userService.inscription(this.user).subscribe((data: User) =>{
       if(data !== null){
         this.user = data;
-        this.router.navigate(['accueil']);
+        localStorage.setItem('id_user', this.user.id.toString())  //stocker l'id
+        this.router.navigate(['accueil'])
         console.log(this.user);
       }else{
         console.log(data)

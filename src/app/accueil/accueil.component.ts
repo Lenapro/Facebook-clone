@@ -16,16 +16,12 @@ export class AccueilComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() : void {
-    
-  }
-
-  get_user(){
-    console.log(this.user)
-    this.user.genre="Feminin"
+    this.user.id = parseInt(localStorage.getItem('id_user'))
     this.userService.get_user(this.user.id).subscribe((data: User )=>{
       this.user = data;
       console.log(this.user)
     })
   }
+
 
 }
