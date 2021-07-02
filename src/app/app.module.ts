@@ -15,13 +15,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
     InscriptionComponent,
-    AccueilComponent
+    AccueilComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     MatFormFieldModule,
     MatSelectModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    PickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

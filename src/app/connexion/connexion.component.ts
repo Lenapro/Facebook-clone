@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class ConnexionComponent implements OnInit {
   
   user : User = new User();
+  erreur=false;
+ 
 
   constructor(private userService: UserService, private router : Router) { }
 
@@ -23,6 +25,7 @@ export class ConnexionComponent implements OnInit {
   ]);
   
   onSubmit(form: NgForm) {
+    
   
   }
 
@@ -34,16 +37,22 @@ export class ConnexionComponent implements OnInit {
   // tslint:disable-next-line: variable-name
   password_medecin: string;
 
+  
+
   connexion(){
     console.log(this.user)
     this.userService.connexion_user(this.user.email, this.user.password).subscribe((data : User) =>{
       console.log(data)
       if(data.id){
-        this.router.navigate(['accueil'])
-      }else{
-        alert("Errrrrrrrrrrrrrrrreeeeeeeeeeeeeeuuuuuuuuurrrrrr")
+          this.router.navigate(['accueil'])
       }
+      else {
+        this.erreur= true;
+      }
+      
+     
     })
   }
+  
 
 }
