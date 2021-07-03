@@ -7,8 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
-   data ={
+  apiUrl = "http://localhost:8000/facebook/"
+
+  constructor(private http: HttpClient) { }
+
+  data = {
     "login": "",
     "password": ""
   }
@@ -16,17 +19,20 @@ export class UserService {
   inscription(data) {
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify(data);
-    return this.http.post("http://localhost:8000/facebook/inscription", body, { 'headers': headers });
+    return this.http.post(this.apiUrl + "inscription", body, { 'headers': headers });
   }
   get_user(id) {
-    return this.http.get("http://localhost:8000/facebook/get/" +id);
+    return this.http.get(this.apiUrl + "get/" + id);
   }
-  connexion_user(email, password){
+  get_email(email) {
+    return this.http.get(this.apiUrl + "email/" + email);
+  }
+  connexion_user(email, password) {
     this.data.login = email;
     this.data.password = password;
     const header = { 'Content-Type': 'application/json' };
     const body = JSON.stringify(this.data);
-    return this.http.post("http://localhost:8000/facebook/connexion", body, { 'headers': header } )
+    return this.http.post(this.apiUrl + "connexion", body, { 'headers': header })
   }
-  
+
 }
