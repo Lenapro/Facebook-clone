@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="../../assets/imgs/facebook.png">
+            <img src="../../assets/imgs/facebook.png" width="40px" style="margin-left: 40px;">
         </a>
         <div style="color: rgb(0, 110, 255); font-size: medium;">
             <strong>
@@ -52,9 +52,26 @@
     </div>
 </nav>
 
-<div class="col-md-12">
-    <p style="color: rgb(105, 105, 216); text-align: center; font-size: xx-large; margin-top: 5%;">Bienvenue!!</p>
-    <img src="../../assets/imgs/blank-profile-picture-973460_640.png" alt="" style=" width: 400px; height: 375px; margin-top: 6%;" class="rounded-circle" >
-    
-    
-</div>
+<mat-card class="example-card" style="margin-top: 8%; margin-left: auto; margin-right: auto;display: block;">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <ng-container *ngIf="image.lien;">
+         
+    <img mat-card-image [src]="'http://localhost:8000'+image.lien" alt="Photo of a Shiba Inu">
+    </ng-container>
+
+    <mat-card-content>
+        <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+    </mat-card>
