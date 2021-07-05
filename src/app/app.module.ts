@@ -39,7 +39,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     MatRadioModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
